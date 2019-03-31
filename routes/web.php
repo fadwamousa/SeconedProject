@@ -1,11 +1,5 @@
 <?php
 
 
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/about',function(){
-	return view('about');
-});
+Route::get('/','PagesController@welcome');
+Route::get('/about','PagesController@about');
