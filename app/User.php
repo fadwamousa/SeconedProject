@@ -41,4 +41,13 @@ class User extends Authenticatable
     public function passport(){
         return $this->hasOne(Passport::class);
     }
+
+    public function mobiles(){
+        return $this->hasMany(Mobile::class);
+    }
+
+    public function roles(){
+        //return $this->belongsToMany(Role::class)->withPivot('created_at');
+        return $this->belongsToMany(Role::class)->withTimestamps();
+    }
 }
